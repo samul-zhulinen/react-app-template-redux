@@ -1,0 +1,23 @@
+.index {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &-logo {
+    width: 144px;
+    height: 144px;
+    margin-bottom: 44px;
+    animation: cirle-anim 10s linear infinite;
+  }
+
+  @keyframes cirle-anim {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

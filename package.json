@@ -1,0 +1,85 @@
+{
+  "name": "{{name}}",
+  "version": "{{version}}",
+  "description": "{{ description }}",
+  "scripts": {
+    "start": "export NODE_ENV=development&& webpack serve",
+    "build": "export NODE_ENV=production&& webpack",
+    "build:dev": "export NODE_ENV=development&& webpack",
+    "build:noSourceMap": "export GENERATE_SOURCEMAP=false&& export NODE_ENV=production&& webpack",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'"
+  },
+  "author": "{{author}}",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
+    "@types/react": "^17.0.0",
+    "autoprefixer": "^10.0.4",
+    "babel-loader": "^8.0.0-beta.0",
+    "babel-preset-react-app": "^10.0.0",
+    "css-loader": "^5.0.1",
+    "cssnano": "^4.1.10",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.0",
+    "less": "^3.12.2",
+    "less-loader": "^7.1.0",
+    "mini-css-extract-plugin": "^1.3.2",
+    "normalize.css": "^8.0.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-loader": "^4.1.0",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-safe-parser": "^5.0.2",
+    "react-dev-utils": "^11.0.1",
+    "react-lottie": "^1.2.3",
+    "react-refresh": "^0.9.0",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^5.0.3",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.10.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^4.0.0-beta.0",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "react-loadable": "^5.5.0",
+    "react-router-dom": "^5.2.0"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.5.0",
+    "@ytu-mf/h5-common": "0.0.3-beta.0",
+    {{#if isYtuMobileBiz}}
+    "@ytu-mf/ytu-mobile-biz": "0.0.2",
+    {{/if}}
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "ytu-mobile": "^0.0.45"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  }
+}
