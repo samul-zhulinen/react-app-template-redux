@@ -51,7 +51,7 @@
     "@reduxjs/toolkit": "^1.5.0",
     "@ytu-mf/h5-common": "0.0.3-beta.0",
     {{#if isYtuMobileBiz}}
-    "@ytu-mf/ytu-mobile-biz": "0.0.2",
+    "@ytu-mf/ytu-mobile-biz": "^0.0.3-beta.1",
     {{/if}}
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
