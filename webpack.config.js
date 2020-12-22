@@ -44,7 +44,7 @@ const config = {
     // 使用模板语法，每次打包生成不同的8位哈希值
     filename: 'static/js/[name].[contenthash:8].js',
     chunkFilename: 'static/js/[name].[contenthash:8].chunk.js',
-    publicPath: isEnvDevelopment ? '/' : `/yuantu/h5-mf/${appPackageJson.name}`,
+    publicPath: isEnvDevelopment ? '/' : `/yuantu/h5-mf/${appPackageJson.name}/`,
     // 优化路径显示
     devtoolModuleFilenameTemplate: isEnvProduction
       ? (info) =>
@@ -342,6 +342,7 @@ const config = {
       'Access-Control-Allow-Origin': '*',
     },
     hot: false,
+    historyApiFallback: true
   },
 };
 

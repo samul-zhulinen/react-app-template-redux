@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import { utils } from '@ytu-mf/h5-common';
+import packageJson from '../package.json'
 
 const App = () => {
   const routers = [
@@ -32,9 +33,9 @@ const App = () => {
       }),
     };
   };
-  let basename = '/yuantu/h5-mf/ytu-template/';
+  let basename = process.env.APP_ENV === 'local' ? '/' : `/yuantu/h5-mf/${packageJson.name}/` ;
   if (window.__POWERED_BY_QIANKUN__) {
-    basename = '/yuantu/h5-app/ytu-template';
+    basename = `/yuantu/h5-app/${packageJson.name}`;
   }
   return (
     <Router basename={basename}>
